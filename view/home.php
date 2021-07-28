@@ -1,23 +1,6 @@
 <?php
 
-    require "database/db.php";
-
-    include_once "model/queries.php";
-
-    $queries = new Queries();
-    $d = $queries->getData();
-
-    if(isset($_POST["submit"]))
-    {
-        $file = $_FILES['file']['tmp_name'];
-        $sql = file_get_contents($file);
-        $statement = $connection->prepare($sql);
-        $statement->execute();
-
-        header("Location: /phptxtsql");
-    }
-
-
+    require "controller/home.php";
 
 ?>
 

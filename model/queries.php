@@ -14,6 +14,16 @@
 
             return $data;
         }
+
+        public function create($file) {
+            require "database/db.php";
+            
+            $sql = file_get_contents($file);
+            $statement = $connection->prepare($sql);
+            $statement->execute();
+
+            header("Location: /phptxtsql");
+        }
     }
 
 
